@@ -1,31 +1,4 @@
-// from: https://www.npmjs.com/package/heaps-permute
-function swap(array, pos1, pos2) {
-  var temp = array[pos1];
-  array[pos1] = array[pos2];
-  array[pos2] = temp;
-}
-function heapsPermute(array, callback, n) {
-  n = n || array.length;
-  if (n === 1) {
-    callback(array.slice());
-  } else {
-    var i, j;
-    for (i = 1; i <= n; i += 1) {
-      heapsPermute(array, callback, n - 1);
-      if (n % 2) {
-        j = 1;
-      } else {
-        j = i;
-      }
-      swap(array, j - 1, n - 1);
-    }
-  }
-}
-function permute(array) {
-  var permutations = [];
-  heapsPermute(array, permutations.push.bind(permutations));
-  return permutations;
-}
+import { permutation } from 'js-combinatorics';
 
 class Ways {
 
@@ -57,8 +30,7 @@ class Ways {
   getLengthVariants() {
     let lengths = [];
 
-    let variants = permute(Object.keys(this.ways));
-    variants.forEach((variant) => {
+    permutation(Object.keys(this.ways)).forEach(variant => {
       let length = 0;
       for (let i=0; i<variant.length-1; i++) {
         length += this.ways[variant[i]][variant[i + 1]];
