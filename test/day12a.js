@@ -28,7 +28,7 @@ describe('examples', () => {
   it('example 6', () => {
     assert.equal(script.run('[-1,{"a":1}]'), 0);
   });
-  
+
   it('example 7', () => {
     assert.equal(script.run('[]'), 0);
   });

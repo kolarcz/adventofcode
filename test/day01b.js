@@ -8,9 +8,9 @@ describe('examples', () => {
   it('example 1', () => {
     assert.equal(script.run(')'), 1);
   });
-  
+
   it('example 2', () => {
     assert.equal(script.run('()())'), 5);
   });
-  
+
 });
