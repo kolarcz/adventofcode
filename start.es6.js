@@ -12,25 +12,29 @@ console.log(`
     ^^^[_]^^^          ^^^[_]^^^          ^^^[_]^^^          ^^^[_]^^^
 `);
 
+let day, part;
 let argv = yargs
   .usage('Usage: npm run start [day]')
-  .example('npm run start 01a')
+  .example('npm run start 01_1')
 
-  .command('[day]', 'Name of the day (([01][0-9]|2[0-5])[ab])')
+  .command('[day]', 'Name of the day (([01][0-9]|2[0-5])_([12]))')
   .demand(1, 'Not enough non-option arguments: got 0, need 1')
 
   .check(({_}) => {
-    let day = String(_[0]);
+    let inp = String(_[0]);
+    let match = inp.match(/^([01][0-9]|2[0-5])_([12])$/);
 
-    if (!day.match(/^(([01][0-9]|2[0-5])[ab])$/)) {
+    if (!match) {
       return 'Day is in bad format';
     }
 
-    if (!fs.existsSync(`./days/day${day}.js`)) {
+    [ , day, part ] = match;
+
+    if (!fs.existsSync(`./days/day${day}/part${part}.js`)) {
       return `Script file for day ${day} does not exists`;
     }
 
-    if (!fs.existsSync(`./data/day${day}.txt`)) {
+    if (!fs.existsSync(`./days/day${day}/part${part}.txt`)) {
       return `Data file for day ${day} does not exists`;
     }
 
@@ -40,7 +44,7 @@ let argv = yargs
   .wrap(79)
   .argv
 
-let script = require(`./days/day${argv._[0]}.js`);
-let data = String(fs.readFileSync(`./data/day${argv._[0]}.txt`, 'utf-8'));
+let script = require(`./days/day${day}/part${part}.js`);
+let data = String(fs.readFileSync(`./days/day${day}/part${part}.txt`, 'utf-8'));
 
 console.log('Answer is:', script.run(data.trim()));

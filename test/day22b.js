@@ -1,7 +1,7 @@
 import path from 'path';
 import assert from 'assert';
 
-let script = require(`../days/${path.basename(__filename)}`);
+let script = require(__filename.replace(/Test\.js$/, '.js'));
 
 describe('examples', () => {
 

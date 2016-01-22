@@ -4,7 +4,7 @@
   "description": "Advent of Code: 25 days code challenge (http://adventofcode.com/)",
   "main": "start.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R nyan --compilers js:babel-core/register --timeout 10000",
+    "test": "./node_modules/.bin/mocha -R nyan --compilers js:babel-core/register --timeout 10000 days/day*/part*Test.js",
     "start": "node ./start.js"
   },
   "author": "Petr Kolář <kolarcz@gmail.com>",
