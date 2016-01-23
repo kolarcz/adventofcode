@@ -1,5 +1,5 @@
 {
-  "name": "adventofcode-com",
+  "name": "adventofcode-2015",
   "version": "1.0.0",
   "description": "Solutions for programming puzzle game: Advent of Code 2015 (http://adventofcode.com/)",
   "main": "start.js",
