@@ -9,11 +9,6 @@
   },
   "author": "Petr Kolář <kolarcz@gmail.com>",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
   "devDependencies": {
     "mocha": "^2.3.4"
   },
