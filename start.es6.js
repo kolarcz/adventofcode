@@ -12,7 +12,7 @@ console.log(`
     ^^^[_]^^^          ^^^[_]^^^          ^^^[_]^^^          ^^^[_]^^^
 `);
 
-let day, part;
+let fileSolution, fileInput;
 let argv = yargs
   .usage('Usage: npm run start [day]')
   .example('npm run start 01_1')
@@ -28,14 +28,15 @@ let argv = yargs
       return 'Day is in bad format';
     }
 
-    [ , day, part ] = match;
+    fileSolution = `./days/day${match[1]}/part${match[2]}_solution.js`;
+    fileInput = `./days/day${match[1]}/part${match[2]}_input.txt`
 
-    if (!fs.existsSync(`./days/day${day}/part${part}.js`)) {
-      return `Script file for day ${day} does not exists`;
+    if (!fs.existsSync(fileSolution)) {
+      return `Script file for day ${inp} does not exists`;
     }
 
-    if (!fs.existsSync(`./days/day${day}/part${part}.txt`)) {
-      return `Data file for day ${day} does not exists`;
+    if (!fs.existsSync(fileInput)) {
+      return `Input file for day ${inp} does not exists`;
     }
 
     return true;
@@ -44,7 +45,7 @@ let argv = yargs
   .wrap(79)
   .argv
 
-let script = require(`./days/day${day}/part${part}.js`);
-let data = String(fs.readFileSync(`./days/day${day}/part${part}.txt`, 'utf-8'));
+let script = require(fileSolution);
+let input = String(fs.readFileSync(fileInput, 'utf-8'));
 
-console.log('Answer is:', script.run(data.trim()));
+console.log('Answer is:', script.run(input.trim()));

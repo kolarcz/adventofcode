@@ -1,10 +1,10 @@
 {
   "name": "adventofcode-com",
   "version": "1.0.0",
-  "description": "Advent of Code: 25 days code challenge (http://adventofcode.com/)",
+  "description": "Solutions for programming puzzle game: Advent of Code 2015 (http://adventofcode.com/)",
   "main": "start.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R nyan --compilers js:babel-core/register --timeout 10000 days/day*/part*Test.js",
+    "test": "./node_modules/.bin/mocha -R nyan --compilers js:babel-core/register --timeout 10000 days/day*/part*_test.js",
     "start": "node ./start.js"
   },
   "author": "Petr Kolář <kolarcz@gmail.com>",
