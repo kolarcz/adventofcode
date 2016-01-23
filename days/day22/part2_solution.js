@@ -119,8 +119,6 @@ class Simulator {
     do {
       states = this.getNextStates(states);
       states = this.removeLosedStates(states);
-
-      console.log(states.length);
     } while (this.isAnyNextStates(states));
 
     let minMana = undefined;
