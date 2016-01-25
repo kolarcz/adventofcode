@@ -1,6 +1,6 @@
 function compute(data) {
+  const type = typeof data;
   let sum = 0;
-  let type = typeof data;
 
   if (type == 'number') {
     sum += data;
@@ -9,7 +9,7 @@ function compute(data) {
       sum += compute(item);
     });
   } else if (type == 'object' && !data.forEach) {
-    let values = Object.keys(data).map(key => data[key]);
+    const values = Object.keys(data).map(key => data[key]);
 
     if (values.indexOf('red') === -1) {
       values.forEach(item => {

@@ -1,7 +1,7 @@
 class LookAndSay {
 
   run(string, repeatNum = 40) {
-    let ret = this.repeat(string, repeatNum)
+    const ret = this.repeat(string, repeatNum)
     return ret.length;
   }
 

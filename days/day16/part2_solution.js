@@ -18,12 +18,12 @@ function getSueInfo(sueDescription) {
 }
 
 export function run(data) {
-  let lines = data.split(/[\r\n]+/).filter(r => r.length);
+  const lines = data.split(/[\r\n]+/).filter(r => r.length);
 
   for (let i=0; i<lines.length; i++) {
-    let sue = getSueInfo(lines[i]);
+    const sue = getSueInfo(lines[i]);
 
-    let isOk = Object.keys(values).every(key => (sue[key] === undefined || sue[key].match(values[key])));
+    const isOk = Object.keys(values).every(key => (sue[key] === undefined || sue[key].match(values[key])));
     if (isOk) {
       return sue.id;
     }

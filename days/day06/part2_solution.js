@@ -3,7 +3,7 @@ class Lights {
   run(data) {
     this.init();
 
-    let commands = this.parseToLines(data);
+    const commands = this.parseToLines(data);
     commands.forEach((command) => {
       command = this.parseCommand(command);
       this.runCommand(

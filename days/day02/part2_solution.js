@@ -1,5 +1,5 @@
 export function run(data) {
-  let boxes = data.split(/[\r\n]+/).filter(r => r.length);
+  const boxes = data.split(/[\r\n]+/).filter(r => r.length);
   let sum = 0;
 
   boxes.forEach((box) => {

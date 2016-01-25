@@ -1,22 +1,21 @@
 export function run(data) {
-  let moves = data.split('');
+  const moves = data.split('');
 
   let x = { santa: 0, robot: 0 };
   let y = { santa: 0, robot: 0 };
-  let even = true;
-  let pos = {};
+  let pos = { '0|0': true };
 
-  pos['0|0'] = true;
-  moves.forEach((move) => {
-    if (move == '^') y[even ? 'santa' : 'robot']--;
-    else if (move == 'v') y[even ? 'santa' : 'robot']++;
-    else if (move == '<') x[even ? 'santa' : 'robot']--;
-    else if (move == '>') x[even ? 'santa' : 'robot']++;
+  let who = 'robot';
 
-    let actualX = x[even ? 'santa' : 'robot'];
-    let actualY = y[even ? 'santa' : 'robot'];
-    pos[`${actualX}|${actualY}`] = true;
-    even = !even;
+  moves.forEach(move => {
+    who = (who == 'santa') ? 'robot' : 'santa';
+
+    if (move == '^') y[who]--;
+    else if (move == 'v') y[who]++;
+    else if (move == '<') x[who]--;
+    else if (move == '>') x[who]++;
+
+    pos[`${x[who]}|${y[who]}`] = true;
   });
 
   return Object.keys(pos).length;

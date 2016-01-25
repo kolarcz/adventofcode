@@ -17,7 +17,7 @@ function getHouseGifts(houseNumber) {
 }
 
 export function run(data) {
-  let minGifts = parseInt(data, 10);
+  const minGifts = parseInt(data, 10);
 
   let houseNumber = 0
   let giftsInHouse = 0;

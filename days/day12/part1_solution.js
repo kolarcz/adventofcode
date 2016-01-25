@@ -1,6 +1,6 @@
 function compute(data) {
+  const type = typeof data;
   let sum = 0;
-  let type = typeof data;
 
   if (type == 'number') {
     sum += data;

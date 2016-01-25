@@ -1,7 +1,7 @@
 export function run(data) {
-  let m = data.match(/row ([0-9]+), column ([0-9]+)/);
-  let row = m[1];
-  let col = m[2];
+  const m = data.match(/row ([0-9]+), column ([0-9]+)/);
+  const row = m[1];
+  const col = m[2];
 
   let x = 1, y = 1;
   let actualNumber = 20151125;

@@ -34,9 +34,9 @@ class RPG {
   }
 
   getAllPlayerCombinations() {
-    let weapons = this.getShopWeapons();
-    let armors = this.getShopArmors();
-    let rings = this.getShopRings();
+    const weapons = this.getShopWeapons();
+    const armors = this.getShopArmors();
+    const rings = this.getShopRings();
 
     let combines = [];
 
@@ -99,8 +99,8 @@ class RPG {
   }
 
   run(data) {
-    let enemy = this.parseEnemyInfo(data);
-    let playerCombinations = this.getAllPlayerCombinations();
+    const enemy = this.parseEnemyInfo(data);
+    const playerCombinations = this.getAllPlayerCombinations();
 
     let maxCost;
 

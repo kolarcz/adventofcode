@@ -5,13 +5,13 @@ class Happiness {
   run(data) {
     this.init();
 
-    let lines = this.parseToLines(data);
+    const lines = this.parseToLines(data);
     lines.forEach((line) => {
       line = this.parseLine(line);
       this.setVariant(line.person, line.nextPerson, line.happiness);
     });
 
-    let happiness = this.getHappinessVariants();
+    const happiness = this.getHappinessVariants();
     return this.getMaxHappiness(happiness);
   }
 
@@ -31,8 +31,8 @@ class Happiness {
     permutation(Object.keys(this.variants)).forEach(combine => {
       let happy = 0;
       for (let i=0; i<combine.length; i++) {
-        let prevI = i == 0 ? combine.length - 1 : i - 1;
-        let nextI = i == combine.length - 1 ? 0 : i + 1;
+        const prevI = i == 0 ? combine.length - 1 : i - 1;
+        const nextI = i == combine.length - 1 ? 0 : i + 1;
 
         happy += this.variants[combine[i]][combine[prevI]] + this.variants[combine[i]][combine[nextI]];
       }

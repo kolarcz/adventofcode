@@ -13,8 +13,8 @@ function replace(string, a, b) {
 export function run(data) {
   let lines = data.split(/[\r\n]+/).filter(r => r.length);
 
-  let formula = lines.pop();
-  let replacers = lines.map(line => line.split(' => '));
+  const formula = lines.pop();
+  const replacers = lines.map(line => line.split(' => '));
 
   let variants = [];
   replacers.forEach(replacer => {

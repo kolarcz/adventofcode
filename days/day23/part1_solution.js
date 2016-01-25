@@ -1,10 +1,10 @@
 class Instructions {
 
   run(data, returningVar = 'b') {
-    let lines = this.parseToLines(data);
-    let commands = lines.map(line => this.parseLineToCommand(line));
+    const lines = this.parseToLines(data);
+    const commands = lines.map(line => this.parseLineToCommand(line));
 
-    let vars = this.runCommands(commands, {});
+    const vars = this.runCommands(commands, {});
     return vars[returningVar];
   }
 
@@ -38,7 +38,7 @@ class Instructions {
     let newData = Object.assign({}, oldData);
 
     for (let i=0; i<commands.length; i++) {
-      let command = commands[i];
+      const command = commands[i];
 
       if (command.var && !newData[command.var]) {
         newData[command.var] = 0;

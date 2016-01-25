@@ -5,13 +5,13 @@ class Ways {
   run(data) {
     this.init();
 
-    let lines = this.parseToLines(data);
-    lines.forEach((line) => {
+    const lines = this.parseToLines(data);
+    lines.forEach(line => {
       line = this.parseLine(line);
       this.setWay(line.city1, line.city2, line.length);
     });
 
-    let lengths = this.getLengthVariants();
+    const lengths = this.getLengthVariants();
     return this.getMaxLength(lengths);
   }
 

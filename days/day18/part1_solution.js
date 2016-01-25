@@ -11,12 +11,12 @@ class Lights {
   }
 
   getCntLightOn(matrix) {
-    let cnt = matrix.map(row => row.reduce((a, b) => a + b)).reduce((a, b) => a + b);
+    const cnt = matrix.map(row => row.reduce((a, b) => a + b)).reduce((a, b) => a + b);
     return cnt;
   }
 
   getNeighboursCntLightOn(matrix, x, y) {
-    let neighOn = (matrix[y-1] ? (matrix[y-1][x-1] || false) : false)
+    const neighOn = (matrix[y-1] ? (matrix[y-1][x-1] || false) : false)
                 + (matrix[y-1] ? (matrix[y-1][x] || false) : false)
                 + (matrix[y-1] ? (matrix[y-1][x+1] || false) : false)
                 + (matrix[y] ? (matrix[y][x-1] || false) : false)
@@ -48,7 +48,7 @@ class Lights {
   }
 
   inputToMatrix(data) {
-    let matrix = data
+    const matrix = data
       .split(/[\r\n]+/)
       .filter(row => row.length)
       .map(row => row.split('').map(cell => cell == '#'));

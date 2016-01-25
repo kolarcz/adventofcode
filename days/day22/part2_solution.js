@@ -13,7 +13,7 @@ class Simulator {
   }
 
   getAvailableSpells(maxMana, usingSpells = []) {
-    let tmp = usingSpells.map(x => x.cost);
+    const tmp = usingSpells.map(x => x.cost);
     return this.getSpells().filter(spell => spell.cost <= maxMana && tmp.indexOf(spell.cost) === -1);
   }
 
@@ -76,7 +76,7 @@ class Simulator {
         }).filter(spell => spell.turns);
 
         if (state.turn == 'player') {
-          let availableSpells = this.getAvailableSpells(state.player.mana, state.player.activeSpells);
+          const availableSpells = this.getAvailableSpells(state.player.mana, state.player.activeSpells);
           availableSpells.forEach(spell => {
             let newState = clone(state);
             newState.player.health--;
@@ -112,8 +112,9 @@ class Simulator {
   }
 
   run(data) {
-    let enemy = this.parseEnemyInfo(data);
-    let state = this.prepareFirstState(enemy);
+    const enemy = this.parseEnemyInfo(data);
+    const state = this.prepareFirstState(enemy);
+    
     let states = [ state ];
 
     do {

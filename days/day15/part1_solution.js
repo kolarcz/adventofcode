@@ -1,7 +1,7 @@
 function variants(num, to, fn, from = 0, attribs = []) {
   if (num == 1) { from = to; }
 
-  for (var i=from; i<=to; i++) {
+  for (let i=from; i<=to; i++) {
     let newAttribs = attribs.concat();
     newAttribs.push(i);
 
@@ -14,7 +14,7 @@ function variants(num, to, fn, from = 0, attribs = []) {
 }
 
 function getIngredientInfo(ingredientDescription) {
-  let info = {
+  const info = {
     capacity: ingredientDescription.match(/capacity (-?[0-9]+)/i)[1],
     durability: ingredientDescription.match(/durability (-?[0-9]+)/i)[1],
     flavor: ingredientDescription.match(/flavor (-?[0-9]+)/i)[1],
@@ -26,7 +26,7 @@ function getIngredientInfo(ingredientDescription) {
 }
 
 export function run(data) {
-  let lines = data.split(/[\r\n]+/).filter(r => r.length);
+  const lines = data.split(/[\r\n]+/).filter(r => r.length);
 
   let ingredients = [];
   let max = 0;
@@ -50,7 +50,7 @@ export function run(data) {
       tmp.texture += ingredient.texture * attribs[i];
     });
 
-    let sum = Math.max(0, tmp.capacity)
+    const sum = Math.max(0, tmp.capacity)
             * Math.max(0, tmp.durability)
             * Math.max(0, tmp.flavor)
             * Math.max(0, tmp.texture);

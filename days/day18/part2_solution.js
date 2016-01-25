@@ -13,12 +13,12 @@ class Lights {
   }
 
   getCntLightOn(matrix) {
-    let cnt = matrix.map(row => row.reduce((a, b) => a + b)).reduce((a, b) => a + b);
+    const cnt = matrix.map(row => row.reduce((a, b) => a + b)).reduce((a, b) => a + b);
     return cnt;
   }
 
   getNeighboursCntLightOn(matrix, x, y) {
-    let neighOn = (matrix[y-1] ? (matrix[y-1][x-1] || false) : false)
+    const neighOn = (matrix[y-1] ? (matrix[y-1][x-1] || false) : false)
                 + (matrix[y-1] ? (matrix[y-1][x] || false) : false)
                 + (matrix[y-1] ? (matrix[y-1][x+1] || false) : false)
                 + (matrix[y] ? (matrix[y][x-1] || false) : false)
@@ -30,8 +30,8 @@ class Lights {
   }
 
   turnOnCorners(matrix) {
-    let maxX = matrix[0].length-1;
-    let maxY = matrix.length-1;
+    const maxX = matrix[0].length-1;
+    const maxY = matrix.length-1;
 
     matrix[0][0] = true;
     matrix[0][maxX] = true;
@@ -48,7 +48,7 @@ class Lights {
       newMatrix[y] = [];
 
       row.forEach((cell, x) => {
-        let neighOn = this.getNeighboursCntLightOn(matrix, x, y);
+        const neighOn = this.getNeighboursCntLightOn(matrix, x, y);
 
         if (cell && neighOn < 2) {
           newMatrix[y][x] = false;
@@ -68,7 +68,7 @@ class Lights {
   }
 
   inputToMatrix(data) {
-    let matrix = data
+    const matrix = data
       .split(/[\r\n]+/)
       .filter(row => row.length)
       .map(row => row.split('').map(cell => cell == '#'));
@@ -76,7 +76,7 @@ class Lights {
   }
 
   visualize(matrix) {
-    let string = matrix.map(row => row.map(cell => cell ? '#' : '.').join('')).join('\n') + '\n\n';
+    const string = matrix.map(row => row.map(cell => cell ? '#' : '.').join('')).join('\n') + '\n\n';
     console.log(string);
   }
 

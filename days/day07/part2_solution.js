@@ -2,7 +2,7 @@ class Logic {
 
   run(data) {
     this.setWiresFromData(data);
-    let aResult = this.runWire('a');
+    const aResult = this.runWire('a');
 
     this.setWiresFromData(data);
     this.setWire('b', () => aResult);
@@ -13,7 +13,7 @@ class Logic {
   setWiresFromData(data) {
     this.wires = {};
 
-    let commands = this.parseToLines(data);
+    const commands = this.parseToLines(data);
     commands.forEach((command) => {
       command = this.parseCommand(command);
       this.runCommand(command.cmd, command.inputs, command.wire);
@@ -25,7 +25,7 @@ class Logic {
   }
 
   parseCommand(command) {
-    var m;
+    let m;
 
     if (m = command.match(/^([a-z0-9]+) -> ([a-z]+)$/)) {
       return {
@@ -65,7 +65,7 @@ class Logic {
   }
 
   runCommand(cmd, inputs, wire) {
-    let f = {
+    const f = {
       EASY: (a) => a,
       NOT: (a) => 65535 - a,
       AND: (a, b) => a & b,

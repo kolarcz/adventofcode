@@ -20,9 +20,9 @@ class Password {
 
   hasSequence(string) {
     for (let i=0; i<string.length-2; i++) {
-      let a = string.charCodeAt(i);
-      let b = string.charCodeAt(i+1);
-      let c = string.charCodeAt(i+2);
+      const a = string.charCodeAt(i);
+      const b = string.charCodeAt(i+1);
+      const c = string.charCodeAt(i+2);
 
       if (a == b-1 && b-1 == c-2 && c-2 == a) {
         return true;
