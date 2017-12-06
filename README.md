@@ -1,7 +1,7 @@
 Advent of Code :santa:
 ==============
 
-Solutions for programming puzzle game Advent of Code (http://adventofcode.com/)
+Solutions for programming puzzle game Advent of Code (https://adventofcode.com/)
 
 ```
         *                  *                  *                  *
