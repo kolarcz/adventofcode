@@ -1,0 +1,19 @@
+{
+  "plugins": [],
+  "extends" : ["airbnb-base"],
+  "globals": {},
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "function-paren-newline": ["error", "consistent"],
+    "global-require": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-console": ["error", { "allow": ["info", "error"] }],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": 0,
+    "no-restricted-syntax": ["error", "BinaryExpression[operator='in']"],
+    "no-shadow": 0
+  }
+}
