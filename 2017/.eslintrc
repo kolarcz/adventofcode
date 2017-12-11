@@ -10,6 +10,7 @@
     "global-require": 0,
     "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-bitwise": 0,
     "no-console": ["error", { "allow": ["info", "error"] }],
     "no-empty": ["error", { "allowEmptyCatch": true }],
     "no-param-reassign": ["error", { "props": false }],
