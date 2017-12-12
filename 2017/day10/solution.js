@@ -16,8 +16,7 @@ function runLengths(numbers, lengths, curr = 0, skip = 0) {
   let currentPosition = curr;
   let skipSize = skip;
 
-  for (let i = 0; i < lengths.length; i++) {
-    const length = lengths[i];
+  for (const length of lengths) {
     reverseNumbers(numbers, currentPosition, length);
     currentPosition += length + skipSize++;
   }
