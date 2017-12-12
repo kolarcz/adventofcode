@@ -1,11 +1,18 @@
 # Advent of Code 2017 :santa:
 
+*Solutions in JavaScript*
+
 Files in days:
 
 - `README.md` - problem of the day
 - `input.txt` - my input data
 - `solution.js` - solution
 - `test.js` - test
+
+Install:
+
+1. https://nodejs.org
+2. `npm install`
 
 Commands:
 
