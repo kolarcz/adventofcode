@@ -24,12 +24,18 @@ function runLengths(numbers, lengths, curr = 0, skip = 0) {
   return { currentPosition, skipSize };
 }
 
-function getHash(numbers) {
-  const numbs = [...numbers];
-  let hash = '';
+function getHash(input) {
+  const numbers = createNumbers();
+  const lengths = [...input].map(ch => ch.charCodeAt(0)).concat([17, 31, 73, 47, 23]);
 
-  while (numbs.length) {
-    const xor = numbs.splice(0, 16).reduce((a, b) => (a ^ b));
+  let [currentPosition, skipSize] = [0, 0];
+  for (let i = 0; i < 64; i++) {
+    ({ currentPosition, skipSize } = runLengths(numbers, lengths, currentPosition, skipSize));
+  }
+
+  let hash = '';
+  while (numbers.length) {
+    const xor = numbers.splice(0, 16).reduce((a, b) => (a ^ b));
     const ch = xor.toString(16);
     hash += (ch.length > 1 ? '' : '0') + ch;
   }
@@ -38,8 +44,8 @@ function getHash(numbers) {
 }
 
 exports.part1 = (input, numbsLength = 256) => {
-  const lengths = input.split(',').map(Number);
   const numbers = createNumbers(numbsLength);
+  const lengths = input.split(',').map(Number);
 
   runLengths(numbers, lengths);
 
@@ -48,14 +54,8 @@ exports.part1 = (input, numbsLength = 256) => {
 };
 
 exports.part2 = input => {
-  const lengths = [...input].map(ch => ch.charCodeAt(0)).concat([17, 31, 73, 47, 23]);
-  const numbers = createNumbers();
-
-  let [currentPosition, skipSize] = [0, 0];
-  for (let i = 0; i < 64; i++) {
-    ({ currentPosition, skipSize } = runLengths(numbers, lengths, currentPosition, skipSize));
-  }
-
-  const hash = getHash(numbers);
+  const hash = getHash(input);
   return hash;
 };
+
+exports.getHash = getHash;
