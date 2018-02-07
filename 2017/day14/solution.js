@@ -11,7 +11,7 @@ function markGroup(grid, x, y) {
   });
 }
 
-exports.part1 = input => {
+exports.part1 = (input) => {
   let sum = 0;
 
   for (let i = 0; i < 128; i++) {
@@ -24,7 +24,7 @@ exports.part1 = input => {
   return sum;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   let groups = 0;
   const grid = [];
 

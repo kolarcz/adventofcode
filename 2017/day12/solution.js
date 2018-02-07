@@ -1,7 +1,7 @@
 function getWhereProgramsAre(groups, programs) {
   const inGroups = new Set();
 
-  groups.forEach(group => {
+  groups.forEach((group) => {
     for (const program of programs) {
       if (group.has(program)) {
         inGroups.add(group);
@@ -16,7 +16,7 @@ function getWhereProgramsAre(groups, programs) {
 function mergeGroupsToFirst(groups, mergingGroups) {
   let first;
 
-  mergingGroups.forEach(group => {
+  mergingGroups.forEach((group) => {
     if (!first) {
       first = group;
     } else {
@@ -30,7 +30,7 @@ function findGroups(input) {
   const groups = new Set();
 
   const rows = input.split(/[\r\n]+/);
-  rows.forEach(row => {
+  rows.forEach((row) => {
     const [, first, seconds] = row.match(/^(\d+) <-> ((\d+, )*\d+)$/);
     const programs = [first].concat(seconds.split(', '));
     groups.add(new Set(programs));
@@ -44,7 +44,7 @@ function findGroups(input) {
   return groups;
 }
 
-exports.part1 = input => {
+exports.part1 = (input) => {
   const groups = findGroups(input);
 
   let group;
@@ -55,7 +55,7 @@ exports.part1 = input => {
   return group.size;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   const groups = findGroups(input);
   return groups.size;
 };

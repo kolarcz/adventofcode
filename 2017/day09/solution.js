@@ -25,12 +25,12 @@ function proccessInput(input) {
   return { groups, chars };
 }
 
-exports.part1 = input => {
+exports.part1 = (input) => {
   const { groups } = proccessInput(input);
   return groups;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   const { chars } = proccessInput(input);
   return chars;
 };

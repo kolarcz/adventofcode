@@ -1,4 +1,4 @@
-exports.part1 = input => {
+exports.part1 = (input) => {
   let sum = 0;
   let pos = 0;
 
@@ -12,7 +12,7 @@ exports.part1 = input => {
   return sum;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   let sum = 0;
   let pos = 0;
 

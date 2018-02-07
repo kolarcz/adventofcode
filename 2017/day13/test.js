@@ -1,8 +1,8 @@
 const test = require('tape');
 const { part1, part2 } = require('./solution');
 
-test('day13', t => {
-  t.test('part1', t => {
+test('day13', (t) => {
+  t.test('part1', (t) => {
     t.equal(part1(
       '0: 3\n' +
       '1: 2\n' +
@@ -12,7 +12,7 @@ test('day13', t => {
     t.end();
   });
 
-  t.test('part2', t => {
+  t.test('part2', (t) => {
     t.equal(part2(
       '0: 3\n' +
       '1: 2\n' +

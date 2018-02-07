@@ -1,4 +1,4 @@
-exports.part1 = input => {
+exports.part1 = (input) => {
   const spin = Number(input);
   const arr = [0];
   let pos = 0;
@@ -12,7 +12,7 @@ exports.part1 = input => {
   return arr[pos2017 + 1];
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   const spin = Number(input);
   let number = 0;
   let pos = 0;

@@ -4,8 +4,8 @@
   "description": "",
   "main": "run.js",
   "scripts": {
-    "test": "node_modules/.bin/tape day*/test.js",
-    "lint": "node_modules/.bin/eslint **/*.js"
+    "test": "tape day*/test.js",
+    "lint": "eslint ."
   },
   "author": "Petr Kolář <kolarcz@gmail.com>",
   "license": "ISC",
@@ -13,7 +13,7 @@
     "tape": "^4.8.0"
   },
   "devDependencies": {
-    "eslint": "^4.13.0",
+    "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0"
   }

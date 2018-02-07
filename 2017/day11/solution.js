@@ -12,7 +12,7 @@ function computeSteps(input) {
   let last = 0;
 
   const moves = input.split(',');
-  moves.forEach(move => {
+  moves.forEach((move) => {
     switch (move) {
       case 'n': y--; break;
       case 's': y++; break;
@@ -29,12 +29,12 @@ function computeSteps(input) {
   return { last, max };
 }
 
-exports.part1 = input => {
+exports.part1 = (input) => {
   const { last } = computeSteps(input);
   return last;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   const { max } = computeSteps(input);
   return max;
 };

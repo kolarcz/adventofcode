@@ -1,5 +1,5 @@
 function getLayers(input) {
-  const layers = input.split(/[\r\n]+/).map(row => {
+  const layers = input.split(/[\r\n]+/).map((row) => {
     const match = row.match(/^(\d+): (\d+)$/);
     const index = Number(match[1]);
     const range = Number(match[2]);
@@ -9,7 +9,7 @@ function getLayers(input) {
   return new Map(layers);
 }
 
-exports.part1 = input => {
+exports.part1 = (input) => {
   let score = 0;
   const layers = getLayers(input);
 
@@ -22,12 +22,12 @@ exports.part1 = input => {
   return score;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   let delay = 0;
   const layers = getLayers(input);
   const indexes = [...layers.keys()];
 
-  const isSeen = index => {
+  const isSeen = (index) => {
     const range = layers.get(index);
     return ((index + delay) % ((range * 2) - 2) === 0);
   };

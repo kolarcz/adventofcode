@@ -8,7 +8,7 @@ function getGeneratorsStart(input) {
   return { genA, genB };
 }
 
-exports.part1 = input => {
+exports.part1 = (input) => {
   let matches = 0;
   let { genA, genB } = getGeneratorsStart(input);
 
@@ -27,7 +27,7 @@ exports.part1 = input => {
   return matches;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   let matches = 0;
   let { genA, genB } = getGeneratorsStart(input);
 

@@ -1,8 +1,8 @@
-exports.part1 = input => {
+exports.part1 = (input) => {
   let sum = 0;
 
   const rows = input.split(/[\r\n]+/);
-  rows.forEach(row => {
+  rows.forEach((row) => {
     const cols = row.split(/\s/);
     const min = Math.min(...cols);
     const max = Math.max(...cols);
@@ -12,11 +12,11 @@ exports.part1 = input => {
   return sum;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   let sum = 0;
 
   const rows = input.split(/[\r\n]+/);
-  rows.forEach(row => {
+  rows.forEach((row) => {
     const cols = row.split(/\s/).map(Number);
 
     for (let i = 0; i < cols.length; i++) {

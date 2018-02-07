@@ -25,7 +25,7 @@ function runCommand(register, command) {
   return false;
 }
 
-exports.part1 = input => {
+exports.part1 = (input) => {
   const register = new Map();
 
   const rows = input.split(/[\r\n]+/);
@@ -35,14 +35,14 @@ exports.part1 = input => {
   return max;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   const register = new Map();
 
   let last;
   let max = -Infinity;
 
   const rows = input.split(/[\r\n]+/);
-  rows.forEach(row => {
+  rows.forEach((row) => {
     last = runCommand(register, row);
     if (max < last) max = last;
   });

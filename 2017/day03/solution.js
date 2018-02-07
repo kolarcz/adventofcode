@@ -1,4 +1,4 @@
-exports.part1 = input => {
+exports.part1 = (input) => {
   const number = Number(input);
 
   if (number <= 1) return 0;
@@ -17,7 +17,7 @@ exports.part1 = input => {
   return steps;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   const number = Number(input);
 
   const numbers = {};

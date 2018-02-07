@@ -53,7 +53,7 @@ exports.part1 = (input, numbsLength = 256) => {
   return result;
 };
 
-exports.part2 = input => {
+exports.part2 = (input) => {
   const hash = getHash(input);
   return hash;
 };
